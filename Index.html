@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Priyanshu Portfolio</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Righteous&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #000;
+            overflow-x: hidden;
+            color: white;
+            position: relative;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ff7b54, #ff3d77, #6f7dff);
+            border-radius: 20px;
+        }
+
+        .blur {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+        }
+
+        .blur1 {
+            width: 350px;
+            height: 350px;
+            background: #ff3d77;
+            top: 120px;
+            right: 150px;
+        }
+
+        .blur2 {
+            width: 280px;
+            height: 280px;
+            background: #6f7dff;
+            bottom: 80px;
+            right: 350px;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #ff7b54, #ff3d77, #6f7dff);
+            animation: float 6s ease-in-out infinite;
+            z-index: 2;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .ball1 {
+            width: 90px;
+            height: 90px;
+            top: 140px;
+            right: 120px;
+        }
+
+        .ball2 {
+            width: 45px;
+            height: 45px;
+            top: 260px;
+            right: 500px;
+            animation-delay: 1s;
+        }
+
+        .ball3 {
+            width: 70px;
+            height: 70px;
+            bottom: 100px;
+            right: 330px;
+            animation-delay: 2s;
+        }
+
+        .ball4 {
+            width: 35px;
+            height: 35px;
+            bottom: 200px;
+            left: 38%;
+            animation-delay: 1.5s;
+        }
+
+        .ball5 {
+            width: 28px;
+            height: 28px;
+            top: 360px;
+            right: 80px;
+            animation-delay: 3s;
+        }
+
+        .ball6 {
+            width: 55px;
+            height: 55px;
+            bottom: 280px;
+            right: 40px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-35px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        header {
+            width: 100%;
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            font-size: 58px;
+            font-weight: 200;
+            background: linear-gradient(90deg,
+                    #ff7b54,
+                    #ff3d77,
+                    #6f7dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 300;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            transition: .5s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #ff3d77;
+        }
+
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+            padding: 0 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            width: 50%;
+            z-index: 5;
+        }
+
+        .hero-text h4 {
+            font-size: 24px;
+            font-weight: 150;
+            margin-top: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 65px;
+            margin-bottom: 25px;
+            font-family: "Righteous", sans-serif;
+        }
+
+        .hero-text h2 {
+            font-size: 40px;
+            font-weight: 500;
+            min-height: 60px;
+            position: relative;
+            top: 5px;
+        }
+
+        #typing {
+            background: linear-gradient(90deg, #ff7b54, #ff3d77, #6f7dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .email-box {
+            width: 520px;
+            height: 72px;
+            background: white;
+            border-radius: 50px;
+            margin-top: 45px;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
+            margin-bottom: 100px;
+        }
+
+        .email-box input {
+            width: 70%;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+
+        .email-box button {
+            width: 30%;
+            height: 100%;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            transition: 0.4s;
+        }
+
+        .email-box button:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 520px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .circle-border {
+            width: 560px;
+            height: 560px;
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #ff7b54, #ff3d77, #6f7dff);
+            animation: rotate 10s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        section {
+            padding: 120px 8%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .section-title {
+            font-size: 55px;
+            text-align: center;
+            margin-bottom: 70px;
+            font-family: 'Righteous', sans-serif;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77, #6f7dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .about-image {
+            width: 40%;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        .about-content {
+            width: 60%;
+        }
+
+        .about-content h2 {
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            line-height: 32px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .about-btn {
+            padding: 16px 35px;
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .service-card {
+            padding: 50px 35px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            text-align: center;
+            transition: .5s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow:
+                0 0 30px rgba(253, 31, 220, 0.089);
+            border: 1px solid #ff00ea9b;
+        }
+
+        .service-card i {
+            font-size: 60px;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77, #6f7dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            line-height: 30px;
+            color: #ccc;
+        }
+
+        .project-grid,
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .project-card,
+        .showcase-card {
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Video और Image दोनों की स्टाइलिंग को एक जैसा रखने के लिए */
+        .project-card img,
+        .project-card video,
+        .showcase-card img,
+        .showcase-card video {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: .5s;
+            display: block;
+        }
+
+        .project-card:hover img,
+        .project-card:hover video,
+        .showcase-card:hover img,
+        .showcase-card:hover video {
+            transform: scale(1.08);
+        }
+
+        .project-overlay,
+        .showcase-content {
+            padding: 25px;
+        }
+
+        .project-overlay h3,
+        .showcase-content h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .project-overlay p,
+        .showcase-content p {
+            color: #ccc;
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+
+        .see-more-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            transition: .4s;
+        }
+
+        .see-more-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 61, 119, 0.5);
+        }
+
+        .showcase-page {
+            min-height: 100vh;
+            padding-top: 160px;
+        }
+
+        .showcase-top {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .showcase-top h1 {
+            font-size: 65px;
+            font-family: 'Righteous', sans-serif;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77, #6f7dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .showcase-top p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 32px;
+            color: #ccc;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 120px;
+            left: 50px;
+            z-index: 999;
+            padding: 15px 28px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 35px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        @media(max-width:1200px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                padding-top: 120px;
+            }
+
+            .hero-text,
+            .hero-image,
+            .about-image,
+            .about-content {
+                width: 100%;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .services-grid,
+            .project-grid,
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .email-box {
+                width: 100%;
+            }
+        }
+
+
+        /* CONTACT */
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        .contact-left {
+            width: 40%;
+        }
+
+        .contact-left h2 {
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+
+        .contact-left p {
+            line-height: 30px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #ff3d77;
+        }
+
+        .socials {
+            display: flex;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .socials a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 20px;
+            transition: .5s;
+        }
+
+        .socials a:hover {
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            transform: translateY(-6px);
+        }
+
+        .contact-right {
+            width: 60%;
+        }
+
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-right input,
+        .contact-right textarea {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            outline: none;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 16px;
+        }
+
+        .contact-right textarea {
+            height: 180px;
+            resize: none;
+        }
+
+        .contact-right button {
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff7b54, #ff3d77);
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1200px) {
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-left,
+            .contact-right {
+                width: 100%;
+            }
+
+        }
+
+        @media(max-width:700px) {
+
+            .hero-text h1 {
+                font-size: 36px;
+                line-height: 46px;
+            }
+
+            .hero-text h2 {
+                font-size: 24px;
+            }
+
+            .hero-image img {
+                width: 320px;
+                height: 320px;
+            }
+
+            .circle-border {
+                width: 360px;
+                height: 360px;
+            }
+
+            .section-title,
+            .showcase-top h1 {
+                font-size: 40px;
+            }
+
+            .back-btn {
+                left: 20px;
+                top: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+
+    <div class="ball ball1"></div>
+    <div class="ball ball2"></div>
+    <div class="ball ball3"></div>
+    <div class="ball ball4"></div>
+    <div class="ball ball5"></div>
+    <div class="ball ball6"></div>
+
+    <div id="mainPage">
+
+        <header>
+
+            <div class="logo">
+                Portfo<span>lio</span>
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Service</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+
+        </header>
+
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+
+                <h4>Hello, my name is</h4>
+
+                <h1>Priyanshu Kumar</h1>
+
+                <h2>
+                    <span id="typing"></span>
+                </h2>
+
+                <div class="email-box">
+                    <input type="text" placeholder="Enter your email....">
+                    <button>Let's Start</button>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="circle-border"></div>
+
+                <img src="images/WhatsApp Image 2026-05-31 at 12.29.49 AM (1).jpeg" alt="">
+
+            </div>
+
+        </section>
+
+        <section id="about">
+
+            <h1 class="section-title">About Me</h1>
+
+            <div class="about-container">
+
+                <div class="about-image">
+                    <img src="images/Motion.jpg">
+                </div>
+
+                <div class="about-content">
+
+                    <h2>Creative Designer & Video Editor</h2>
+
+                    <p>
+                        I create premium UI/UX designs, cinematic video editing,
+                        social media content and modern digital experiences with
+                        clean visuals and smooth animation.
+                    </p>
+
+                    <p>
+                        My focus is creating modern websites and content that
+                        looks professional, premium and visually powerful.
+                    </p>
+
+                    <button class="about-btn">Download CV</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="services">
+
+            <h1 class="section-title">Our Services</h1>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <i class="fa-solid fa-film"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Modern premium website and app UI designs with smooth user experience.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Video Editing</h3>
+                    <p>
+                        Cinematic editing with transitions, effects and storytelling.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Graphic Design</h3>
+                    <p>
+                        Creative social media, branding and modern graphic visuals.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="projects">
+
+            <h1 class="section-title">My Projects</h1>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <img src="images/544c6023-f9a8-4266-9fa2-83219cd36bb.jpeg">
+
+                    <div class="project-overlay">
+
+                        <h3>UI/UX Project</h3>
+
+                        <p>Modern Website Design</p>
+
+                        <a href="#" class="see-more-btn" onclick="openPage('uiuxPage')">
+                            See More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <video autoplay loop muted playsinline>
+                        <source src="Videos/0416.mov">
+                    </video>
+
+
+                    <div class="project-overlay">
+
+                        <h3>Video Editing</h3>
+
+                        <p>Cinematic Editing</p>
+
+                        <a href="#" class="see-more-btn" onclick="openPage('videoPage')">
+                            See More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <img src="images/Skill to income (21).jpg">
+
+                    <div class="project-overlay">
+
+                        <h3>Graphic Design</h3>
+
+                        <p>Creative Branding</p>
+
+                        <a href="#" class="see-more-btn" onclick="openPage('graphicPage')">
+                            See More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="contact">
+
+            <h1 class="section-title">Contact Us</h1>
+
+            <div class="contact-container">
+
+                <div class="contact-left">
+
+                    <h2>Let's Work Together</h2>
+
+                    <p>
+                        If you need premium UI/UX design,
+                        video editing or creative work,
+                        feel free to contact me anytime.
+                    </p>
+
+                    <div class="contact-info">
+                        <i class="fa-solid fa-envelope"></i>
+                        priyanshu7979kumar@gmail.com
+                    </div>
+
+                    <div class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 7667970060
+                    </div>
+
+                    <div class="contact-info">
+                        <i class="fa-solid fa-location-dot"></i>
+                        M.G Nagar, Kankarbagh Patna,Bihar-800020
+                    </div>
+
+                    <div class="socials">
+
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-right">
+
+                    <form>
+
+                        <input type="text" placeholder="Your Name">
+
+                        <input type="email" placeholder="Your Email">
+
+                        <input type="text" placeholder="Subject">
+
+                        <textarea placeholder="Your Message"></textarea>
+
+                        <button type="submit">Send Message</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 Priyanshu Kumar | All Rights Reserved
+        </footer>
+
+    </div>
+
+    <section class="showcase-page" id="uiuxPage" style="display:none;">
+
+        <a href="#" class="back-btn" onclick="goBack()">
+            ← Back
+        </a>
+
+        <div class="showcase-top">
+
+            <h1>UI/UX Showcase</h1>
+
+            <p>
+                Premium dashboard, mobile app and website UI projects designed
+                with modern clean interface and smooth user experience.
+            </p>
+
+        </div>
+
+        <div class="showcase-grid">
+
+            <div class="showcase-card">
+                <img src="images/bafd35b7-4d9d-47b8-b997-491bf3c8c40.jpeg">
+                <div class="showcase-content">
+                    <h3>Cloth Landing Page</h3>
+                    <p>Premium fashion website designed to showcase trendy clothing collections</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <img src="images/73e42345-7150-4cfc-ab8b-26cbfb00337.jpeg">
+                <div class="showcase-content">
+                    <h3>NGO Website</h3>
+                    <p>Professional NGO website designed to highlight social initiatives, donations, volunteer programs,
+                        and community impact.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <img src="images/544c6023-f9a8-4266-9fa2-83219cd36bb.jpeg">
+                <div class="showcase-content">
+                    <h3>Online Assessment Portal</h3>
+                    <p>A modern examination platform designed for secure online testing</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="showcase-page" id="videoPage" style="display:none;">
+
+        <a href="#" class="back-btn" onclick="goBack()">
+            ← Back
+        </a>
+
+        <div class="showcase-top">
+
+            <h1>Video Editing Showcase</h1>
+
+            <p>
+                Cinematic reels, professional YouTube edits and premium social
+                media content editing projects.
+            </p>
+
+        </div>
+
+        <div class="showcase-grid">
+
+            <div class="showcase-card">
+                <video autoplay loop muted playsinline>
+                    <source src="Videos/0416.mov">
+                </video>
+                <div class="showcase-content">
+                    <h3>Cinematic Reel</h3>
+                    <p>Luxury cinematic Instagram reel editing project.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <video autoplay loop muted playsinline>
+                    <source src="Videos/Done bhaiya.mov">
+                </video>
+                <div class="showcase-content">
+                    <h3>YouTube Editing</h3>
+                    <p>Professional YouTube content editing showcase.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <video autoplay loop muted playsinline>
+                    <source src="Videos/0416.mov">
+                </video>
+                <div class="showcase-content">
+                    <h3>Music Video</h3>
+                    <p>High quality music video transitions and effects.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="showcase-page" id="graphicPage" style="display:none;">
+
+        <a href="#" class="back-btn" onclick="goBack()">
+            ← Back
+        </a>
+
+        <div class="showcase-top">
+
+            <h1>Graphic Design Showcase</h1>
+
+            <p>
+                Premium posters, branding, logo and social media graphic
+                design collection.
+            </p>
+
+        </div>
+
+        <div class="showcase-grid">
+
+            <div class="showcase-card">
+                <img src="images/Skill to income (16).jpg">
+                <div class="showcase-content">
+                    <h3>Brand Identity</h3>
+                    <p>Luxury modern branding and identity design.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <img src="images/WhatsApp Image 2026-05-28 at 2.05.08 AM.jpeg">
+                <div class="showcase-content">
+                    <h3>Social Media Post</h3>
+                    <p>Creative premium Instagram and Facebook designs.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <img src="images/Skill to income (21).jpg">
+                <div class="showcase-content">
+                    <h3>Poster Design</h3>
+                    <p>Modern event and advertisement poster collection.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        const texts = [
+            "I am Video Editor",
+            "I am Graphics Designer",
+            "I am UI/UX Designer"
+        ];
+
+        let speed = 100;
+
+        const textElement = document.getElementById("typing");
+
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function typeWriter() {
+
+            if (charIndex < texts[textIndex].length) {
+
+                textElement.innerHTML += texts[textIndex].charAt(charIndex);
+
+                charIndex++;
+
+                setTimeout(typeWriter, speed);
+
+            }
+
+            else {
+
+                setTimeout(eraseText, 1500);
+
+            }
+
+        }
+
+        function eraseText() {
+
+            if (textElement.innerHTML.length > 0) {
+
+                textElement.innerHTML =
+                    textElement.innerHTML.slice(0, -1);
+
+                setTimeout(eraseText, 50);
+
+            }
+
+            else {
+
+                textIndex++;
+
+                if (textIndex >= texts.length) {
+
+                    textIndex = 0;
+
+                }
+
+                charIndex = 0;
+
+                setTimeout(typeWriter, 500);
+
+            }
+
+        }
+
+        window.onload = typeWriter;
+
+        // PAGE SWITCH
+
+        function openPage(pageId) {
+
+            document.getElementById("mainPage").style.display = "none";
+
+            document.getElementById("uiuxPage").style.display = "none";
+
+            document.getElementById("videoPage").style.display = "none";
+
+            document.getElementById("graphicPage").style.display = "none";
+
+            document.getElementById(pageId).style.display = "block";
+
+            window.scrollTo(0, 0);
+        }
+
+        function goBack() {
+
+            document.getElementById("mainPage").style.display = "block";
+
+            document.getElementById("uiuxPage").style.display = "none";
+
+            document.getElementById("videoPage").style.display = "none";
+
+            document.getElementById("graphicPage").style.display = "none";
+
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+</body>
+
+</html>
